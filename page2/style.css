@@ -7,16 +7,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
-
-
-
-
-
-
-/*
+/*-----
  head start
- */
+-- */
 #header-sec {
     background-color: #161616;
     margin: 20px 5% 50px 5%;
@@ -80,6 +73,13 @@
     width: 100%;
 }
 
+
+
+
+/* ---
+main/aside start
+---- */
+
 a {
     text-decoration: none;
     color: hsl(0, 0%, 9%);
@@ -108,9 +108,9 @@ a {
 }
 
 #table-sec {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
     align-items: center;
     width: 312px;
     height: 312px;
@@ -127,11 +127,33 @@ a {
 
 }
 
-.blog-img img {
+
+
+
+/* --
+main/articles start
+-- */
+.blog-img>span>img {
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0 0;
 }
 
+.blog-img {
+    margin: 50px 30px 0 30px;
+
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 20px; 
+}
+
+.vs {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #161616;
+    ;
+}
 
 #blogs {
     display: grid;
@@ -145,34 +167,29 @@ article {
 
 }
 
+
 .blog-article {
     padding: 20px;
 }
 
-.icons-blog {
-    display: flex;
-    justify-content: flex-start;
-    gap: 30px;
-}
-
 .blog-text {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
+    text-align: center;
 }
 
-.blog-icon {
+.blog-time {
+    text-align: center;
     font-size: 16px;
+    font-weight: 400;
 }
 
-.trnsfr {
-    color: #161616;
-    font-weight: 500;
-    font-size: 16px;
-    border: 1px solid #161616;
+.btn-show-tab {
+    padding: 12px 29px;
+    width: 131px;
+    height: 47px;
+    background: #DD0000;
     border-radius: 5px;
-    padding: 5px 15px;
-    display: inline;
-    
 }
 
 main {
@@ -181,9 +198,12 @@ main {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: space-evenly;
-    gap: 10px;
+    gap: 20px;
 }
 
+/* --
+footer start
+------ */
 footer {
     background-color: #161616;
 }
@@ -232,7 +252,8 @@ footer {
     width: 40%;
     margin: 30px 30% 0 30%;
 }
-/*mobile divices start.....*/
+
+/*mobile divices start*/
 @media only screen and (max-width:688px) {
     #header-sec {
         display: flex;
@@ -272,7 +293,6 @@ footer {
 
 }
 
-
 /* tablate divices start */
 @media only screen and (min-width:689px) and (max-width:992px) {
 
@@ -281,7 +301,6 @@ footer {
         background: #FFFFFF;
         border-radius: 10px;
         width: 100%;
-        /* If i set button width:260px and height:60px, the website became not properly responsive in "tablte".(then problems will start in the "main" and "footer")*/
         height: 60px;
         font-weight: 500px;
         border: 1px solid #E8E8E8;
@@ -337,7 +356,6 @@ footer {
         justify-content: center;
         margin-bottom: 70px;
         margin-top: -70px;
-        
     }
 
     footer {
@@ -351,6 +369,13 @@ footer {
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
-    } 
-   
+    }
+
+}
+
+/* destop divices start */
+@media only screen and (min-width:993px) {
+    .btn-show-tab {
+        display: none;
+    }
 }
